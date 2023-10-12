@@ -18,7 +18,7 @@ use App\Http\Controllers\CrudController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');

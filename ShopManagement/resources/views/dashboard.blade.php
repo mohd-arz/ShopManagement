@@ -7,7 +7,6 @@
     @if(session('message'))
     <p class="alert alert-success d-inline-block m-4 absolute top-5 text-white">{{session('message')}}</p>
     @endif
-    <a href="{{route('registerShopPage')}}"><button class='btn btn-primary m-3 text-white'>Register as a Shop</button></a>
     <select name="filter" id="filter">
         <option value='all'>--Filter--</option>
         @foreach($shops as $shop)

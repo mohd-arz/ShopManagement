@@ -8,18 +8,14 @@
     <table class="table table-dark table-striped table-hover table-bordered w-4/5 m-auto text-center tasks-table text-white">
     <tr>
         <th>#</th>
-        <th>Shop Name</th>
-        <th>Contact</th>
+        <th>Name</th>
         <th>Email</th>
-        <th>User_id</th>
     </tr>
     @foreach($approvals as $approval)
     <tr>
         <td>{{$loop->iteration}}</td>
-        <td>{{$approval->shop_name}}</td>
-        <td>{{$approval->shop_contact}}</td>
-        <td>{{$approval->shop_email}}</td>
-        <td>{{$approval->user_id}}</td>
+        <td>{{$approval->name}}</td>
+        <td>{{$approval->email}}</td>
         <td>
             <div>
             <a href="{{route('approved',$approval->id)}}" class="btn btn-primary text-white">Approve ?</a>
