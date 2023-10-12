@@ -39,7 +39,7 @@ Route::get('/home',[AuthController::class,'authFn'])->middleware('auth','verifie
 
 // Shop
 Route::get('/register_shop',[CrudController::class,'registerShopPage'])->name('registerShopPage');
-Route::post('/sent_approval',[CrudController::class,'sentApproval'])->name('sentApproval');
+Route::get('/sent_approval',[CrudController::class,'sentApproval'])->name('sentApproval');
 
 Route::get('/approvals',[CrudController::class,'approvalPage'])->name('approvalPage');
 Route::get('/approved/{id}',[CrudController::class,'approved'])->name('approved');
@@ -56,6 +56,8 @@ Route::get('/products_page',[CrudController::class,'productsPage'])->name('produ
 Route::get('/delete_shop/{id}',[CrudController::class,'deleteShop'])->name('deleteShop');
 
 Route::post('/filter',[CrudController::class,'filtering']);
+
+Route::post('/create_shop',[CrudController::class,'createShop'])->name('createShop');
 
 
 

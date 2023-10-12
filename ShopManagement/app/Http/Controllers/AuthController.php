@@ -28,9 +28,11 @@ class AuthController extends Controller
                     return view('admin.dashboard',compact('shops','products'));
                 }
                 else if($usertype=='shopowner'){
-                    $shop=Shop::where('user_id',Auth::id())->first();
-                    $products=Product::where('shop_id',$shop->id)->get();
-                    return view('shop.dashboard',compact('products'));
+                    // $shop=Shop::where('user_id',Auth::id())->first();
+                    // $products=Product::where('shop_id',$shop->id)->get();
+                    // return view('shop.dashboard',compact('products'));
+                    return view('shop.newdashboard');
+
                 }else{
                     return redirect()->back();
                 }

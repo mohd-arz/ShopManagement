@@ -22,7 +22,7 @@
         <td>{{$approval->user_id}}</td>
         <td>
             <div>
-            <a href="{{route('approved',$approval->user_id)}}" class="btn btn-primary text-white">Approve ?</a>
+            <a href="{{route('approved',$approval->id)}}" class="btn btn-primary text-white">Approve ?</a>
             </div>
         </td>
     </tr>

@@ -38,7 +38,9 @@
 <body>
         <h1 class='text-center'>Register As a Shop</h1>
         <div class="container d-flex justify-content-center align-items-center">
-        <form action="{{route('sentApproval')}}" method='post' class='form'>
+        <!-- <form action="{{route('sentApproval')}}" method='post' class='form'> -->
+        <form action="{{route('createShop')}}" method='post' class='form'>
+
             @csrf
             <div class="form-group">
                 <label for="name" class="form-label">Shop Name:
@@ -58,7 +60,7 @@
                 </label>
             </div>
             <div class="form-group">
-                <input type="submit" value='Sent Approval' class='btn btn-primary'>
+                <input type="submit" value='Create Shop' class='btn btn-primary'>
             </div>
         </form> 
         </div>

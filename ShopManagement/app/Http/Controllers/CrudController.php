@@ -7,6 +7,14 @@ use App\Models\Shop;
 use App\Models\Approval;
 use App\Models\Product;
 
+use App\Http\Controllers\Controller;
+use App\Providers\RouteServiceProvider;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rules;
+use Illuminate\View\View;
+
 
 use Illuminate\Http\Request;
 
@@ -16,38 +24,63 @@ class CrudController extends Controller
         return view('shop.create');
     }
 
-    public function sentApproval(){
+    public function sentApproval(Request $request){
         $id=Auth::id();
+        $user=Auth::user();
         Approval::create([
-            'shop_name'=>request('name'),
-            'shop_contact'=>request('contactno'),
-            'shop_email'=>request('email'),
-            'user_id'=>$id
+            'shop_name'=> session('name'),
+            'shop_contact'=>session('password'),
+            'shop_email'=> session('email'),
+            'user_id'=>'1'
         ]);
-        return redirect()->route('home')->with('message','Sent Approval Successfully');
+        // return $name;
+        // return session('name');
+        // return redirect()->route('welcome');
+        // return redirect()->route('home')->with('message','Sent Approval Successfully');
     }
 
     public function approvalPage(){
         $approvals=Approval::all();
         return view ('admin.approval',compact('approvals'));
     }
+
+    public function createShop(Request $request){
+          Shop::create([
+                'shop_name'=>$request->name,
+                'shop_contact'=>$request->contactno,
+                'shop_email'=>$request->email,
+                'user_id'=>Auth::id()
+        ]);
+        return redirect()->route('home')->with('message','Added Successfully');
+
+    }
+
     public function approved($id){
-        $approval=Approval::where('user_id',$id)->first();
-        Shop::create([
-                'shop_name'=>$approval->shop_name,
-                'shop_contact'=>$approval->shop_contact,
-                'shop_email'=>$approval->shop_email,
-                'user_id'=>$id
+        $approval=Approval::find($id);
+        // Shop::create([
+        //         'shop_name'=>$approval->shop_name,
+        //         'shop_contact'=>$approval->shop_contact,
+        //         'shop_email'=>$approval->shop_email,
+        //         'user_id'=>$id
+        // ]);
+
+        // return $approval->shop_contact;
+       
+        $user = User::create([
+            'name' => $approval->shop_name,
+            'email' => $approval->shop_email,
+            'password' => $approval->shop_contact,
+            'user_type'=>'shopowner',
         ]);
 
-        $user=User::where('id',$id);
-        $user->update([
-            'user_type'=>'shopowner'
-        ]);
+        event(new Registered($user));
 
+        Auth::login($user);
         $approval->delete();
+
+        return redirect(RouteServiceProvider::HOME);
         
-        return redirect()->route('home')->with('message','Approved Successfully');
+        // return redirect()->route('home')->with('message','Approved Successfully');
     }
 
     public function addProductPage(){
