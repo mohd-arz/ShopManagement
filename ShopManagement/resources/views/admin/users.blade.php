@@ -16,10 +16,9 @@
         <th>User Type</th>
         <th>Action</th>
     </tr>
-
         @foreach($users as $user)
     <tr>
-        <td>{{$loop->iteration}}</td>
+        <td>{{($users->currentPage()-1)*$users->perPage()+$loop->index+1}}</td>  
         <td>{{$user->name}}</td>
         <td>{{$user->email}}</td>
         <td>{{$user->user_type}}</td>

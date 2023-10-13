@@ -31,7 +31,6 @@ class CrudController extends Controller
             'email'=> session('email'),
             'password'=>session('password'),
         ]);
-
         return redirect()->route('welcome')->with('message','Approved Send Successfully');
     }
 
@@ -177,7 +176,7 @@ class CrudController extends Controller
     //     $user->delete();
     //     return redirect()->route('home')->with('message','User Deleted Successfully');
     // }
-    
+
     //Block user for Admin 
     public function blockUser($id){
         $user=User::find($id);

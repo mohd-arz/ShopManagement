@@ -8,21 +8,21 @@
         </h2>
     </x-slot>
     @if(session('message'))
-    <p class="alert alert-success d-inline-block m-4 absolute top-5">{{session('message')}}</p>
+        <p class="alert alert-success d-inline-block m-4 absolute top-5">{{session('message')}}</p>
     @endif
     <div class="buttons flex">
-    <div class="products">
-         <a href="{{route('productsPage')}}"><button class='btn btn-primary m-3 text-white'>Products</button></a>
-    </div>
-    <div class="users">
-        <a href="{{route('usersPage')}}"><button class='btn btn-primary m-3 text-white'>Users</button></a>
-    </div> 
-    <div class="approval ml-auto">
-        <a href="{{route('approvalPage')}}"><button class='btn btn-primary m-3 text-white'>Approvals</button></a>
-    </div> 
-    <div class="block">
-        <a href="{{route('blockedPage')}}"><button class='btn btn-primary m-3 text-white'>Blocked List</button></a>
-    </div> 
+        <div class="products">
+            <a href="{{route('productsPage')}}"><button class='btn btn-primary m-3 text-white'>Products</button></a>
+        </div>
+        <div class="approval">
+            <a href="{{route('approvalPage')}}"><button class='btn btn-primary m-3 text-white'>Approvals</button></a>
+        </div> 
+        <div class="users ml-auto">
+            <a href="{{route('usersPage')}}"><button class='btn btn-primary m-3 text-white'>Users</button></a>
+        </div> 
+        <div class="block">
+            <a href="{{route('blockedPage')}}"><button class='btn btn-primary m-3 text-white'>Blocked List</button></a>
+        </div> 
     </div>
     <h1 class='text-white text-center text-3xl m-3'>Shop Table</h1>
     <table class="table table-dark table-striped table-hover table-bordered w-4/5 m-auto text-center text-white">
@@ -50,7 +50,7 @@
         </tr>
         @endforeach
     </table>
-    <div>
+    <div class='p-3'>
         {{$shops->links()}}
     </div>
 </x-app-layout>
