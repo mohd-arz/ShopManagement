@@ -19,7 +19,7 @@
     </tr>
     @foreach($blocks as $block)
     <tr>
-        <td>{{$loop->iteration}}</td>
+        <td>{{($blocks->currentPage()-1)*$blocks->perPage()+$loop->index+1}}</td>
         <td>{{$block->name}}</td>
         <td>{{$block->email}}</td>
         <td>

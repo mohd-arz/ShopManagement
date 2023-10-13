@@ -11,6 +11,7 @@
     @if(session('message'))
     <p class="alert alert-success d-inline-block m-4 absolute top-5">{{session('message')}}</p>
     @endif
+
     @if($shop == null)
     <a href="{{route('registerShopPage')}}"><button class='btn btn-primary m-3 text-white'>Register as a Shop</button></a>
     @else
@@ -24,7 +25,6 @@
         <th>Visiblity</th>
         <th>Action</th>
     </tr>
-
         @foreach($products as $product)
     <tr>
         <td>{{($products->currentPage()-1)*$products->perPage()+$loop->index+1}}</td>
@@ -39,12 +39,13 @@
             <a href="{{route('deleteProduct',$product->id)}}" class='btn btn-danger w-1/3'>Delete</a>
         </td>
         </tr>
-        
         @endforeach
     </table>
-    <div>
+
+    <div class='p-3'>
         {{$products->links()}}
     </div>
+    
     @endif
 </x-app-layout>
 <script>

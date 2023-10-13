@@ -20,10 +20,9 @@
         <th>Visiblity</th>
         <th>Action</th>
     </tr>
-
         @foreach($products as $product)
     <tr>
-        <td>{{$loop->iteration}}</td>
+        <td>{{($products->currentPage()-1)*$products->perPage()+$loop->index+1}}</td>  
         <td>{{$product->name}}</td>
         <td>{{$product->shop_name}}</td>
         <td>{{$product->shop_contact}}</td>
