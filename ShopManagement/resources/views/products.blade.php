@@ -7,21 +7,19 @@
         <th>Shop Email</th>
         <th>Category</th>
         <th>Price</th>
-        <th>Visiblity</th>
     </tr>
-
         @foreach($products as $product)
     <tr>
-        <td>{{$loop->iteration}}</td>
+       <td>{{($products->currentPage()-1)*$products->perPage()+$loop->index+1}}</td>
         <td>{{$product->name}}</td>
         <td>{{$product->shop_name}}</td>
         <td>{{$product->shop_contact}}</td>
         <td>{{$product->shop_email}}</td>
         <td>{{$product->category}}</td>   
-        <td> 
-            {{$product->price}}
-        </td>
-        <td>{{$product->visibility}}</td>
-        </tr>
+        <td>{{$product->price}}</td>
+    </tr>
         @endforeach
-    </table>
+</table>
+<div>
+    {{$products -> links()}}
+</div>

@@ -1,4 +1,7 @@
 <x-guest-layout>
+    @if(session('message'))
+    <p class="bg-red-500 text-white py-2 px-4 inline-block m-4 absolute top-5">{{ session('message') }}</p>
+    @endif
     <form method="POST" action="{{ route('register') }}">
         @csrf
 
@@ -18,7 +21,7 @@
 
         <div class="mt-4">
             <x-input-label for="text" :value="__('Select UserType')" />
-            <select name="user_type" id="user_type">
+            <select name="user_type" id="user_type" class="block mt-1 w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
                 <option value="user">User</option>
                 <option value="shopowner">Shop Owner</option>
             </select>
@@ -58,3 +61,9 @@
         </div>
     </form>
 </x-guest-layout>
+<script>
+     const resultbtn=document.querySelector('p');
+        setTimeout(() => {
+            resultbtn.parentNode.removeChild(resultbtn);
+        }, 2000);
+</script>

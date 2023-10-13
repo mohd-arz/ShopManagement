@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
+use App\Models\BlockList;
 
 class RegisteredUserController extends Controller
 {
@@ -39,6 +40,9 @@ class RegisteredUserController extends Controller
         if($request->user_type=='shopowner' && Auth::id()==null){
             return redirect()->route('sentApproval')->with(['name'=>$request->name,'email'=>$request->email,'password' => Hash::make($request->password),]);
         }
+        $blocked = BlockList::where('email',$request->email)->first();
+        if($blocked!=null)return redirect()->back()->with('message','Sorry, you are blocked !');
+
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,

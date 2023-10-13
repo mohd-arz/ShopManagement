@@ -43,6 +43,7 @@ Route::get('/sent_approval',[CrudController::class,'sentApproval'])->name('sentA
 
 Route::get('/approvals',[CrudController::class,'approvalPage'])->name('approvalPage');
 Route::get('/approved/{id}',[CrudController::class,'approved'])->name('approved');
+Route::get('/rejected/{id}',[CrudController::class,'rejectedApproval'])->name('rejectedApproval');
 
 Route::get('/add_product',[CrudController::class,'addProductPage'])->name('addProductPage');
 Route::post('/adding_product',[CrudController::class,'addProduct'])->name('addProduct');
@@ -56,8 +57,18 @@ Route::get('/products_page',[CrudController::class,'productsPage'])->name('produ
 Route::get('/delete_shop/{id}',[CrudController::class,'deleteShop'])->name('deleteShop');
 
 Route::post('/filter',[CrudController::class,'filtering']);
+Route::post('/filter_category',[CrudController::class,'filterCategory']);
+Route::post('/sort_by_higher',[CrudController::class,'sortByHigher']);
+Route::post('/sort_by_lower',[CrudController::class,'sortByLower']);
 
 Route::post('/create_shop',[CrudController::class,'createShop'])->name('createShop');
+
+Route::get('/users_page',[CrudController::class,'usersPage'])->name('usersPage');
+
+Route::get('/delete_user/{id}',[CrudController::class,'deleteUser'])->name('deleteUser');
+Route::get('/block_user/{id}',[CrudController::class,'blockUser'])->name('blockUser');
+Route::get('/blocked_user',[CrudController::class,'blockedPage'])->name('blockedPage');
+Route::get('/remove_block/{id}',[CrudController::class,'removeBlock'])->name('removeBlock');
 
 
 

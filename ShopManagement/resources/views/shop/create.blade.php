@@ -38,7 +38,6 @@
 <body>
         <h1 class='text-center'>Register As a Shop</h1>
         <div class="container d-flex justify-content-center align-items-center">
-        <!-- <form action="{{route('sentApproval')}}" method='post' class='form'> -->
         <form action="{{route('createShop')}}" method='post' class='form'>
 
             @csrf
@@ -51,12 +50,14 @@
             <div class="form-group">
                 <label for="contactno" class="form-label">Contact Number:
                     <input type="text" name='contactno' class="form-control">
+                    @error('contactno') <p class='alert alert-danger mt-2'>{{$message}}</p> @enderror
                 </label>
             </div>
 
             <div class="form-group">
                 <label for="email" class="form-label">Email:
                     <input type="email" name='email' class="form-control">
+                    @error('email') <p class='alert alert-danger mt-2'>{{$message}}</p> @enderror
                 </label>
             </div>
             <div class="form-group">

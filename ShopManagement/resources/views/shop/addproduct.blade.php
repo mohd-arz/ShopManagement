@@ -46,7 +46,7 @@
                      @error('name') <p class='alert alert-danger mt-2'>{{$message}}</p> @enderror
                 </label>
             </div>
-            <div>
+            <div class="form-group">
             <label for="category">Category:</label>
                 <select name="category" id="category" class="form-select">
                     <option>--Select a category--</option>
@@ -62,16 +62,16 @@
                      @error('price') <p class='alert alert-danger mt-2'>{{$message}}</p> @enderror
                 </label>
             </div>
-            <div>
+            <div class="form-group">
             <label for="visibility">Visible:</label>
                 <select name="visibility" id="visibility" class="form-select">
                     <option>--Select Visiblity--</option>
                     <option value="Own">Own</option>
                     <option value="Public">Public</option>
                 </select>
-                @error('visible') <p class='alert alert-danger mt-2'>{{$message}}</p> @enderror
+                @error('visibility') <p class='alert alert-danger mt-2'>{{$message}}</p> @enderror
             </div>
-            <div class="form-group">
+            <div class="form-group mt-4">
                 <input type="submit" value='Add Product' class='btn btn-primary'>
             </div>
         </form> 

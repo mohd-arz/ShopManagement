@@ -8,11 +8,7 @@
         </h2>
     </x-slot>
 
-    @if(session('message'))
-    <p class="alert alert-success d-inline-block m-4 absolute top-5">{{session('message')}}</p>
-    @endif
-
-    <h1 class='text-white text-center text-3xl mt-3'>Approvals</h1>
+    <h1 class='text-white text-center text-3xl mt-3'>Block List</h1>
 
     <table class="table table-dark table-striped table-hover table-bordered w-4/5 m-auto text-center tasks-table text-white mt-3">
     <tr>
@@ -21,27 +17,18 @@
         <th>Email</th>
         <th>Action</th>
     </tr>
-    @foreach($approvals as $approval)
+    @foreach($blocks as $block)
     <tr>
         <td>{{$loop->iteration}}</td>
-        <td>{{$approval->name}}</td>
-        <td>{{$approval->email}}</td>
+        <td>{{$block->name}}</td>
+        <td>{{$block->email}}</td>
         <td>
-            <div>
-            <a href="{{route('approved',$approval->id)}}" class="btn btn-success text-white">Approve</a>
-            <a href="{{route('rejectedApproval',$approval->id)}}" class="btn btn-danger text-white">Reject</a>
-            </div>
+            <a href="{{route('removeBlock',$block->id)}}" class='btn btn-danger'>Remove Block</a>
         </td>
     </tr>
     @endforeach
 </table>
 <div class='p-3'>
-    {{$approvals->links()}}
+    {{$blocks->links()}}
 </div>
 </x-app-layout>
-<script>
-const resultbtn=document.querySelector('.alert');
-        setTimeout(() => {
-            resultbtn.parentNode.removeChild(resultbtn);
-        }, 2000);
-</script>
