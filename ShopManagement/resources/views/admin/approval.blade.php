@@ -23,7 +23,7 @@
     </tr>
     @foreach($approvals as $approval)
     <tr>
-        <td>{{($approvals->currentPage()-1)*$approvals->perPage()+$loop->index+1}}</td>
+        <td>{{$loop->iteration}}</td>
         <td>{{$approval->name}}</td>
         <td>{{$approval->email}}</td>
         <td>

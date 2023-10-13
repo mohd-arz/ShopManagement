@@ -35,50 +35,40 @@ require __DIR__.'/auth.php';
 
 /**************************************/
 
-//Home 
 Route::get('/home',[AuthController::class,'authFn'])->middleware('auth','verified')->name('home');
-/*****/
 
-// ShopOwner Middleware--
-Route::get('/register_shop',[CrudController::class,'registerShopPage'])->middleware(['shopowner'])->name('registerShopPage');
-Route::get('/add_product',[CrudController::class,'addProductPage'])->middleware(['shopowner'])->name('addProductPage');
-Route::get('/edit_product/{id}',[CrudController::class,'editProductPage'])->middleware(['shopowner'])->name('editProductPage');
-
-//Shop 
-Route::post('/create_shop',[CrudController::class,'createShop'])->name('createShop');
-Route::post('/adding_product',[CrudController::class,'addProduct'])->name('addProduct');
-Route::post('/editing_product/{id}',[CrudController::class,'editProduct'])->name('editProduct');
-Route::get('/delete_product/{id}',[CrudController::class,'deleteProduct'])->name('deleteProduct');
-/*****/
-
-//Approval 
+// Shop
+Route::get('/register_shop',[CrudController::class,'registerShopPage'])->name('registerShopPage');
 Route::get('/sent_approval',[CrudController::class,'sentApproval'])->name('sentApproval');
+
+Route::get('/approvals',[CrudController::class,'approvalPage'])->name('approvalPage');
 Route::get('/approved/{id}',[CrudController::class,'approved'])->name('approved');
 Route::get('/rejected/{id}',[CrudController::class,'rejectedApproval'])->name('rejectedApproval');
-/*****/
 
-//Customer 
+Route::get('/add_product',[CrudController::class,'addProductPage'])->name('addProductPage');
+Route::post('/adding_product',[CrudController::class,'addProduct'])->name('addProduct');
+
+Route::get('/edit_product/{id}',[CrudController::class,'editProductPage'])->name('editProductPage');
+Route::post('/editing_product/{id}',[CrudController::class,'editProduct'])->name('editProduct');
+Route::get('/delete_product/{id}',[CrudController::class,'deleteProduct'])->name('deleteProduct');
+
+Route::get('/products_page',[CrudController::class,'productsPage'])->name('productsPage');
+
+Route::get('/delete_shop/{id}',[CrudController::class,'deleteShop'])->name('deleteShop');
+
 Route::post('/filter',[CrudController::class,'filtering']);
 Route::post('/filter_category',[CrudController::class,'filterCategory']);
 Route::post('/sort_by_higher',[CrudController::class,'sortByHigher']);
 Route::post('/sort_by_lower',[CrudController::class,'sortByLower']);
-/*****/
 
-//Admin Middleware --
-Route::get('/approvals',[CrudController::class,'approvalPage'])->middleware(['admin'])->name('approvalPage');
-Route::get('/products_page',[CrudController::class,'productsPage'])->middleware(['admin'])->name('productsPage');
-Route::get('/users_page',[CrudController::class,'usersPage'])->middleware(['admin'])->name('usersPage');
-Route::get('/blocked_user',[CrudController::class,'blockedPage'])->middleware(['admin'])->name('blockedPage');
-/*****/
+Route::post('/create_shop',[CrudController::class,'createShop'])->name('createShop');
 
-//Admin --
+Route::get('/users_page',[CrudController::class,'usersPage'])->name('usersPage');
+
 Route::get('/delete_user/{id}',[CrudController::class,'deleteUser'])->name('deleteUser');
 Route::get('/block_user/{id}',[CrudController::class,'blockUser'])->name('blockUser');
+Route::get('/blocked_user',[CrudController::class,'blockedPage'])->name('blockedPage');
 Route::get('/remove_block/{id}',[CrudController::class,'removeBlock'])->name('removeBlock');
-Route::get('/delete_shop/{id}',[CrudController::class,'deleteShop'])->name('deleteShop');
-/*****/
-
-
 
 
 

@@ -8,28 +8,25 @@
         </h2>
     </x-slot>
     @if(session('message'))
-        <p class="alert alert-success d-inline-block m-4 absolute top-5">{{session('message')}}</p>
+    <p class="alert alert-success d-inline-block m-4 absolute top-5">{{session('message')}}</p>
     @endif
     <select name="filter_category" id="filter_category" class='text-white bg-gray-800 text-center rounded-md  hover:border-gray-500 leading-tight focus:outline-none focus:shadow-outline m-3'>
         <option value='all'>Sort by Category</option>
-        @foreach($categories as $category)
-        <option value="{{$category}}">{{$category}}</option>
-        @endforeach
+        <option value="Electronics">Electronics</option>
+        <option value="Fruits">Fruits</option>
+        <option value="Furnitures">Furnitures</option>
     </select>
-
     <select name="filter" id="filter" class='text-white bg-gray-800 text-center rounded-md  hover:border-gray-500 leading-tight focus:outline-none focus:shadow-outline m-3'>
         <option value='all'>Sort by Shop</option>
         @foreach($shops as $shop)
         <option value="{{$shop->id}}">{{$shop->shop_name}}</option>
         @endforeach
     </select>
-
     <select name="sort_by_price" id="sort_by_price" class='text-white bg-gray-800 text-center rounded-md  hover:border-gray-500 leading-tight focus:outline-none focus:shadow-outline m-3'>
         <option value='all'>Sort by Price</option>
-        <option value="higher">Higher</option>
-        <option value="lower">Lower</option>
+        <option value="higher">Sort by Higher</option>
+        <option value="lower">Sort by Lower</option>
     </select>
-
     <h1 class='text-white text-center text-3xl mb-3'>Products</h1>
     <div class="products-container">
         @include('products',compact('products'))

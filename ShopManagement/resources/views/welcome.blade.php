@@ -40,7 +40,7 @@
             <div class="max-w-7xl mx-auto p-6 lg:p-8">
                 <div class="flex justify-center">
                 
-                <svg fill="#667EEA" height="170px" width="170px" version="1.1" class="h-10 w-auto bg-gray-100 dark:bg-gray-900"
+                <svg fill="#FF2D20" height="170px" width="170px" version="1.1" class="h-10 w-auto bg-gray-100 dark:bg-gray-900"
                 id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
                     viewBox="0 0 512 512" xml:space="preserve">
                 <g>
