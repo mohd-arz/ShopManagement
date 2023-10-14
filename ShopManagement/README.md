@@ -1,66 +1,68 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Shopping Mall Management Application
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Project Proposal
+**INCUBE INNOVATION INCUBATOR LLP Hyderabad**
 
-## About Laravel
+## Contents
+1. [Introduction](#introduction)
+2. [Project Objectives](#project-objectives)
+3. [Application Features](#application-features)
+   - [Admin Dashboard](#admin-dashboard)
+   - [Shop Owners Dashboard](#shop-owners-dashboard)
+   - [Customer Dashboard](#customer-dashboard)
+   - [Forms](#forms)
+4. [Technology Stack](#technology-stack)
+5. [Conclusion](#conclusion)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Introduction
+We propose the development of a comprehensive Shopping Mall Management Application built using the Laravel framework. This application will serve as a digital platform for shopping mall administration, shop owners, and customers, streamlining shop registration, product management, and customer interactions.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Project Objectives
+The primary goal is to create a user-friendly and efficient application that addresses the specific requirements of a shopping mall. Key objectives include:
+1. Shop Registration and Approval.
+2. Product Management for both shops and admin.
+3. Customer Registration and Interaction.
+4. Dashboards for Admin, Shop Owners, and Customers.
+5. Product Filtering and Access Control.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Application Features
+### Admin Dashboard
+- Edit/Delete customers.
+- Approve or disapprove customer registrations.
+- Manage customer and product data.
 
-## Learning Laravel
+### Shop Owners Dashboard
+- View customers associated with their shop.
+- View and manage products for their shop.
+- Choose between "Own" or "Public" visibility for products.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Customer Dashboard
+- View products within the shopping mall.
+- Filter products by vendor (shop) or category.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Forms
+#### Add Customer
+- Customer name.
+- Contact number.
+- Email ID.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+#### Add Products
+- Product name.
+- Category.
+- Price.
+- Option (Own or Public).
 
-## Laravel Sponsors
+#### Customer Registration
+- Customer name.
+- Contact number.
+- Email ID.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## Technology Stack
+- Framework: Laravel
+- Frontend: HTML, CSS, JavaScript
+- Database: MySQL
+- Authentication: Laravel built-in authentication system
+- Deployment: Hosting the application on a web server.
 
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Conclusion
+This project aims to create a Shopping Mall Management Application that effectively manages shop registrations, product listings, and customer interactions. By implementing Laravel, we ensure robust security, scalability, and a user-friendly interface. If you have any questions or require further details, please feel free to contact us. We look forward to the opportunity to work on this project and deliver a solution that meets your specific needs.
