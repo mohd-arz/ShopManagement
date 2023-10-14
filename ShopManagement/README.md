@@ -1,4 +1,4 @@
-# Shopping Mall Management Application
+# ShopManagement Application
 
 
 ## Contents
