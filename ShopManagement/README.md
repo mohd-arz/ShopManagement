@@ -1,7 +1,5 @@
 # Shopping Mall Management Application
 
-## Project Proposal
-**INCUBE INNOVATION INCUBATOR LLP Hyderabad**
 
 ## Contents
 1. [Introduction](#introduction)
