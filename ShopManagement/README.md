@@ -12,9 +12,6 @@
 4. [Technology Stack](#technology-stack)
 5. [Conclusion](#conclusion)
 
-## Introduction
-We propose the development of a comprehensive Shopping Mall Management Application built using the Laravel framework. This application will serve as a digital platform for shopping mall administration, shop owners, and customers, streamlining shop registration, product management, and customer interactions.
-
 ## Project Objectives
 The primary goal is to create a user-friendly and efficient application that addresses the specific requirements of a shopping mall. Key objectives include:
 1. Shop Registration and Approval.
