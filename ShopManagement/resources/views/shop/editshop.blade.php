@@ -36,32 +36,32 @@
         }
     </style>
 <body>
-        <h1 class='text-center'>Register As a Shop</h1>
+        <h1 class='text-center'>Edit Shop</h1>
         <div class="container d-flex justify-content-center align-items-center">
-        <form action="{{route('createShop')}}" method='post' class='form'>
+        <form action="{{route('editShop')}}" method='post' class='form'>
 
             @csrf
             <div class="form-group">
                 <label for="name" class="form-label">Shop Name:
-                    <input type="text" name='name' class="form-control" >
+                    <input type="text" name='name' class="form-control" value='{{$shop->shop_name}}' >
                      @error('name') <p class='alert alert-danger mt-2'>{{$message}}</p> @enderror
                 </label>
             </div>
             <div class="form-group">
                 <label for="contactno" class="form-label">Contact Number:
-                    <input type="text" name='contactno' class="form-control">
+                    <input type="text" name='contactno' class="form-control" value='{{$shop->shop_contact}}'>
                     @error('contactno') <p class='alert alert-danger mt-2'>{{$message}}</p> @enderror
                 </label>
             </div>
 
             <div class="form-group">
                 <label for="email" class="form-label">Email:
-                    <input type="email" name='email' class="form-control">
+                    <input type="email" name='email' class="form-control" value='{{$shop->shop_email}}'>
                     @error('email') <p class='alert alert-danger mt-2'>{{$message}}</p> @enderror
                 </label>
             </div>
             <div class="form-group">
-                <input type="submit" value='Create Shop' class='btn btn-primary'>
+                <input type="submit" value='Edit Shop' class='btn btn-primary'>
             </div>
         </form> 
         </div>

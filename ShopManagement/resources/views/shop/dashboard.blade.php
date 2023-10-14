@@ -15,7 +15,10 @@
     @if($shop == null)
     <a href="{{route('registerShopPage')}}"><button class='btn btn-primary m-3 text-white'>Register as a Shop</button></a>
     @else
-    <a href="{{route('addProductPage')}}" class="btn btn-primary text-white m-3">Add Product</a>
+    <div class='flex justify-between'>
+        <a href="{{route('addProductPage')}}" class="btn btn-primary text-white m-3">Add Product</a>
+        <a href="{{route('editShopPage')}}" class="btn btn-primary text-white m-3">Edit Shop</a>
+    </div>
     <table class="table table-dark table-striped table-hover table-bordered w-4/5 m-auto text-center text-white">
     <tr>
         <th>#</th>

@@ -43,9 +43,11 @@ Route::get('/home',[AuthController::class,'authFn'])->middleware('auth','verifie
 Route::get('/register_shop',[CrudController::class,'registerShopPage'])->middleware(['shopowner'])->name('registerShopPage');
 Route::get('/add_product',[CrudController::class,'addProductPage'])->middleware(['shopowner'])->name('addProductPage');
 Route::get('/edit_product/{id}',[CrudController::class,'editProductPage'])->middleware(['shopowner'])->name('editProductPage');
+Route::get('/edit_shop',[CrudController::class,'editShopPage'])->middleware(['shopowner'])->name('editShopPage');
 
 //Shop 
 Route::post('/create_shop',[CrudController::class,'createShop'])->name('createShop');
+Route::post('/editing_shop',[CrudController::class,'editShop'])->name('editShop');
 Route::post('/adding_product',[CrudController::class,'addProduct'])->name('addProduct');
 Route::post('/editing_product/{id}',[CrudController::class,'editProduct'])->name('editProduct');
 Route::get('/delete_product/{id}',[CrudController::class,'deleteProduct'])->name('deleteProduct');

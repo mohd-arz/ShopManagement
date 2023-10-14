@@ -28,8 +28,8 @@
     <table class="table table-dark table-striped table-hover table-bordered w-4/5 m-auto text-center text-white">
     <tr>
         <th>#</th>
-        <th>Shop Name</th>
         <th>Owner Name</th>
+        <th>Shop Name</th>
         <th>Shop Contact</th>
         <th>Shop Email</th>
         <th>Owner Email</th>

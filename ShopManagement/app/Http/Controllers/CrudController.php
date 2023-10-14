@@ -85,10 +85,31 @@ class CrudController extends Controller
         ]);
         return redirect()->route('home')->with('message','Added Successfully');
     }
+    public function editShopPage(){
+        $id = Auth::id();
+        $shop= Shop::where('user_id',$id)->first();
+        return view('shop.editshop',compact('shop'));
+    }
+    public function editShop(){
+        request()->validate([
+            'name'=>'required',
+            'contactno'=>'required',
+            'email'=>'required',
+        ]);
+
+        $id = Auth::id();
+        $shop= Shop::where('user_id',$id)->first();
+        $shop->update([
+            'shop_name'=>request('name'),
+            'shop_contact'=>request('contactno'),
+            'shop_email'=>request('email'),
+        ]);
+        return redirect()->route('home')->with('message','Shop Edited Successfully');
+    }
 
     /****/
 
-    //Shop --
+    //Inside Shop --
 
     //Adding Products Page --
     public function addProductPage(){
@@ -141,6 +162,7 @@ class CrudController extends Controller
         $product->delete();
         return redirect()->route('home')->with('message','Product Deleted Successfully');
     }
+
 
     /****/
 
